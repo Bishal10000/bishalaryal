@@ -31,32 +31,32 @@
     $profilePhotoExists = file_exists(public_path($profilePhotoPath));
 @endphp
 
-<section id="home" class="grid flex-1 items-center gap-10 py-14 lg:grid-cols-[1.15fr_0.85fr]">
-    <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+<section id="home" class="grid flex-1 items-center gap-8 py-8 sm:gap-10 sm:py-14 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur sm:p-8">
         <p class="text-lg text-slate-500">Hello, I'm</p>
 
-        <h1 class="mt-3 font-display text-6xl font-bold tracking-tight text-slate-900 sm:text-7xl">
+        <h1 class="mt-3 font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl">
             Bishal Aryal
         </h1>
 
-        <h2 class="mt-5 max-w-3xl font-display text-3xl font-semibold leading-tight text-teal-700 sm:text-4xl">
+        <h2 class="mt-5 max-w-3xl font-display text-2xl font-semibold leading-tight text-teal-700 sm:text-4xl">
             Full-Stack Web Developer
         </h2>
 
-        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+        <p class="mt-6 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Building production-ready web applications with PHP and Laravel. Specialized in robust database design, secure APIs, and scalable web architecture. Transforming business ideas into reliable platforms that drive real results.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/projects" class="inline-flex items-center justify-center rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-[0_8px_20px_rgba(13,148,136,0.28)] transition hover:-translate-y-0.5 hover:bg-teal-700">
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="/projects" class="inline-flex w-full items-center justify-center rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-[0_8px_20px_rgba(13,148,136,0.28)] transition hover:-translate-y-0.5 hover:bg-teal-700 sm:w-auto">
                 View My Work
             </a>
-            <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-teal-500 hover:text-teal-700">
+            <a href="/contact" class="inline-flex w-full items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-teal-500 hover:text-teal-700 sm:w-auto">
                 Get In Touch
             </a>
         </div>
 
-        <div class="mt-8 flex items-center gap-3 text-slate-500">
+        <div class="mt-8 flex flex-wrap items-center gap-3 text-slate-500">
             @foreach ($socialLinks as $social)
                 <a href="{{ $social['href'] }}" aria-label="{{ $social['label'] }}" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition hover:border-teal-500 hover:text-teal-700">
                     @if ($social['icon'] === 'github')
@@ -75,8 +75,8 @@
 
     <div class="relative flex justify-center lg:justify-end">
         <div class="absolute -left-5 top-4 h-20 w-20 rounded-2xl bg-amber-200/70 blur-xl"></div>
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(15,23,42,0.1)]">
-            <div class="h-[420px] w-[360px] overflow-hidden rounded-[1.5rem] bg-slate-200">
+        <div class="w-full max-w-[380px] rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(15,23,42,0.1)]">
+            <div class="h-[340px] w-full overflow-hidden rounded-[1.5rem] bg-slate-200 sm:h-[420px]">
                 @if ($profilePhotoExists)
                     <img
                         src="{{ asset($profilePhotoPath) }}"
