@@ -12,13 +12,8 @@
         ],
         [
             'label' => 'LinkedIn',
-            'href' => '#',
+            'href' => 'https://www.linkedin.com/in/bishal-aryal-829286310/',
             'icon' => 'linkedin',
-        ],
-        [
-            'label' => 'Stack Overflow',
-            'href' => '#',
-            'icon' => 'stackoverflow',
         ],
         [
             'label' => 'Email',
