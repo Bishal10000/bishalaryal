@@ -6,25 +6,49 @@
 @php
     $projects = [
         [
-            'tag' => 'Featured',
-            'title' => 'FundHive',
-            'description' => 'A web-based crowdfunding platform enabling users to create fundraising campaigns and receive donations securely. Features community support, user dashboards, campaign management, and payment integration.',
-            'skills' => ['PHP', 'Laravel', 'MySQL', 'Payment API'],
-            'year' => '2025',
+            'tag' => 'GitHub Repository',
+            'title' => 'Hamro-bhansa',
+            'description' => 'Web application project from my GitHub profile.',
+            'skills' => ['PHP', 'Web App'],
+            'year' => '2026',
+            'github_url' => 'https://github.com/Bishal10000/Hamro-bhansa',
+            'demo_url' => null,
         ],
         [
-            'tag' => 'Web App',
-            'title' => 'Blood Bank Management System',
-            'description' => 'Web-based system for managing donors, receivers, and blood inventory. Streamlines donation tracking and availability checks for blood banks.',
-            'skills' => ['PHP', 'Database Design', 'MySQL', 'Bootstrap'],
-            'year' => '2024',
+            'tag' => 'GitHub Repository',
+            'title' => 'Exam-hub',
+            'description' => 'Exam platform project from my GitHub profile.',
+            'skills' => ['PHP', 'Education'],
+            'year' => '2026',
+            'github_url' => 'https://github.com/Bishal10000/Exam-hub',
+            'demo_url' => null,
         ],
         [
-            'tag' => 'Mobile',
-            'title' => 'Employee Android App',
-            'description' => 'Native Android application for employee data input and display. Built with Java, demonstrating mobile development fundamentals.',
-            'skills' => ['Java', 'Android', 'Data Handling'],
-            'year' => '2023',
+            'tag' => 'GitHub Repository',
+            'title' => 'Blood-Donor-Management',
+            'description' => 'A web-based platform connecting blood donors with recipients in specific regions.',
+            'skills' => ['PHP', 'Laravel', 'MySQL'],
+            'year' => '2026',
+            'github_url' => 'https://github.com/Bishal10000/Blood-Donor-Management',
+            'demo_url' => null,
+        ],
+        [
+            'tag' => 'GitHub Repository',
+            'title' => 'bishalaryal',
+            'description' => 'Personal portfolio repository.',
+            'skills' => ['Laravel', 'Blade', 'Tailwind CSS'],
+            'year' => '2026',
+            'github_url' => 'https://github.com/Bishal10000/bishalaryal',
+            'demo_url' => 'https://bishal10.com.np',
+        ],
+        [
+            'tag' => 'GitHub Repository',
+            'title' => 'fundhive',
+            'description' => 'Crowdfunding platform repository from my GitHub profile.',
+            'skills' => ['PHP', 'Laravel', 'MySQL'],
+            'year' => '2026',
+            'github_url' => 'https://github.com/Bishal10000/fundhive',
+            'demo_url' => null,
         ],
     ];
 @endphp
@@ -36,7 +60,7 @@
             <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Selected projects</h1>
         </div>
         <p class="max-w-2xl text-base leading-7 text-slate-600">
-            From crowdfunding platforms to management systems, these projects showcase my ability to build secure, scalable web applications.
+            These are the projects from my GitHub repositories, with direct links to source code and live demos where available.
         </p>
     </div>
 
@@ -64,10 +88,21 @@
                     @endforeach
                 </div>
 
-                <a href="/contact" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition group-hover:text-teal-800">
-                    Discuss this project
-                    <span aria-hidden="true">-></span>
-                </a>
+                <div class="mt-6 flex items-center gap-4">
+                    <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition group-hover:text-teal-800">
+                        View on GitHub
+                        <span aria-hidden="true">-></span>
+                    </a>
+
+                    @if (!empty($project['demo_url']))
+                        <a href="{{ $project['demo_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition group-hover:text-slate-900">
+                            Live Demo
+                            <span aria-hidden="true">-></span>
+                        </a>
+                    @else
+                        <span class="text-sm font-semibold text-slate-400">Demo: Coming soon</span>
+                    @endif
+                </div>
             </article>
         @endforeach
     </div>
