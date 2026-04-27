@@ -12,7 +12,7 @@
             'skills' => ['PHP', 'Web App'],
             'year' => '2026',
             'github_url' => 'https://github.com/Bishal10000/Hamro-bhansa',
-            'demo_url' => null,
+            'demo_url' => 'http://hamro-bhansa.test',
         ],
         [
             'tag' => 'GitHub Repository',
@@ -21,7 +21,7 @@
             'skills' => ['PHP', 'Education'],
             'year' => '2026',
             'github_url' => 'https://github.com/Bishal10000/Exam-hub',
-            'demo_url' => null,
+            'demo_url' => 'http://exam-hub.test',
         ],
         [
             'tag' => 'GitHub Repository',
@@ -30,7 +30,7 @@
             'skills' => ['PHP', 'Laravel', 'MySQL'],
             'year' => '2026',
             'github_url' => 'https://github.com/Bishal10000/Blood-Donor-Management',
-            'demo_url' => null,
+            'demo_url' => route('project.preview', 'blood-donor-management'),
         ],
         [
             'tag' => 'GitHub Repository',
@@ -39,7 +39,7 @@
             'skills' => ['Laravel', 'Blade', 'Tailwind CSS'],
             'year' => '2026',
             'github_url' => 'https://github.com/Bishal10000/bishalaryal',
-            'demo_url' => 'https://bishal10.com.np',
+            'demo_url' => route('project.preview', 'bishalaryal'),
         ],
         [
             'tag' => 'GitHub Repository',
@@ -48,7 +48,7 @@
             'skills' => ['PHP', 'Laravel', 'MySQL'],
             'year' => '2026',
             'github_url' => 'https://github.com/Bishal10000/fundhive',
-            'demo_url' => null,
+            'demo_url' => 'http://fundhive.test',
         ],
     ];
 @endphp
@@ -88,20 +88,18 @@
                     @endforeach
                 </div>
 
-                <div class="mt-6 flex items-center gap-4">
-                    <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition group-hover:text-teal-800">
-                        View on GitHub
-                        <span aria-hidden="true">-></span>
+                @php
+                    $demoLink = !empty($project['demo_url']) ? $project['demo_url'] : $project['github_url'];
+                @endphp
+
+                <div class="mt-6 flex items-center gap-3">
+                    <a href="{{ $demoLink }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-800">
+                        View Live
                     </a>
 
-                    @if (!empty($project['demo_url']))
-                        <a href="{{ $project['demo_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition group-hover:text-slate-900">
-                            Live Demo
-                            <span aria-hidden="true">-></span>
-                        </a>
-                    @else
-                        <span class="text-sm font-semibold text-slate-400">Demo: Coming soon</span>
-                    @endif
+                    <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700">
+                        Github
+                    </a>
                 </div>
             </article>
         @endforeach
