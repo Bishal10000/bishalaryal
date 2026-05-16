@@ -5,12 +5,12 @@
 @section('content')
 <section class="py-8 lg:py-12 flex-1">
     <div class="flex items-center justify-between gap-4 border-t border-slate-200 pt-8">
-        <a href="/projects" class="inline-flex items-center gap-2 rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-800">
+        <a href="/projects" class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm ring-2 ring-slate-200 transition hover:bg-slate-700">
             <- Back to Projects
         </a>
 
-        <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700">
-            Open Github
+        <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex min-w-[11rem] items-center justify-center rounded-lg bg-amber-400 px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-slate-950 shadow-sm ring-2 ring-amber-200 transition hover:bg-amber-300">
+            Open Source
         </a>
     </div>
 
@@ -46,13 +46,13 @@
             />
 
             <div class="mt-5 flex flex-col gap-3">
-                <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
-                    View Repository
+                <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-amber-400 px-5 py-4 text-base font-extrabold uppercase tracking-wide text-slate-950 shadow-sm ring-2 ring-amber-200 transition hover:bg-amber-300">
+                    Open Source
                 </a>
 
                 @if (!empty($project['external_live_url']))
-                    <a href="{{ $project['external_live_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-800">
-                        Open External Live Site
+                    <a href="{{ $project['external_live_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-4 text-base font-extrabold uppercase tracking-wide text-white shadow-sm ring-2 ring-emerald-200 transition hover:bg-emerald-700">
+                        Open Live Demo
                     </a>
                 @endif
             </div>

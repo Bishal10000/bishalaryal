@@ -92,13 +92,13 @@
                     $demoLink = !empty($project['demo_url']) ? $project['demo_url'] : $project['github_url'];
                 @endphp
 
-                <div class="mt-6 flex items-center gap-3">
-                    <a href="{{ $demoLink }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-800">
-                        View Live
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <a href="{{ $demoLink }}" target="_blank" rel="noopener noreferrer" class="inline-flex min-w-[10rem] items-center justify-center rounded-xl bg-emerald-600 px-5 py-4 text-base font-extrabold uppercase tracking-wide text-white shadow-sm ring-2 ring-emerald-200 transition hover:bg-emerald-700">
+                        Open Live Demo
                     </a>
 
-                    <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700">
-                        Github
+                    <a href="{{ $project['github_url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex min-w-[10rem] items-center justify-center rounded-xl bg-amber-400 px-5 py-4 text-base font-extrabold uppercase tracking-wide text-slate-950 shadow-sm ring-2 ring-amber-200 transition hover:bg-amber-300">
+                        Open Source
                     </a>
                 </div>
             </article>
