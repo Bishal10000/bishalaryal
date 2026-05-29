@@ -80,6 +80,10 @@ class Post extends Model
             return $this->thumbnail;
         }
 
+        if (!empty($this->thumbnail)) {
+            return asset(ltrim($this->thumbnail, '/'));
+        }
+
         return 'https://placehold.co/800x500/111111/c8622a?text=Bishal+Aryal';
     }
 

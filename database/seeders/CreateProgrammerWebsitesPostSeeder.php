@@ -46,6 +46,7 @@ class CreateProgrammerWebsitesPostSeeder extends Seeder
                 'title' => '5 Websites Every Programmer Should Bookmark',
                 'body' => 'PLACEHOLDER',
                 'excerpt' => 'Stop googling the same tools every day. Add these to your browser and actually use them.',
+                'thumbnail' => '/images/programmer-websites-thumbnail.svg',
                 'user_id' => $author->id,
                 'category_id' => $category->id,
                 'published_at' => now(),
