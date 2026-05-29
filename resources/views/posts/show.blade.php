@@ -50,6 +50,54 @@
         </div>
     </aside>
 </section>
+@elseif ($isProgrammerWebsitesPost)
+<section class="article-page__header">
+    <div class="site-container">
+        <div class="article-page__meta fade-up">
+            <span class="badge">{{ $post->category?->name ?? 'Blog' }}</span>
+            <span>{{ $post->published_at?->format('M d, Y') }}</span>
+            <span class="meta-dot"></span>
+            <span>{{ $post->readingTimeMinutes() }} min read</span>
+        </div>
+
+        <h1 class="article-page__title fade-up">{{ $post->title }}</h1>
+        <p class="lead fade-up">{{ $post->excerpt }}</p>
+    </div>
+</section>
+
+<section class="article-page__body">
+    <div class="article-page__reading-column">
+        <div class="fade-up overflow-hidden rounded-[2rem] border border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950/60">
+            <iframe
+                src="{{ route('articles.programmer-websites-bookmark') }}"
+                title="5 Websites Every Programmer Should Bookmark"
+                class="block h-[3800px] w-full border-0"
+                style="background: #0d0f14;"
+                loading="lazy"
+            ></iframe>
+        </div>
+    </div>
+
+    <aside class="space-y-5 lg:sticky lg:top-24 lg:self-start">
+        <div class="glass-card rounded-[2rem] p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500">Blog meta</p>
+            <dl class="mt-5 grid gap-4 text-sm">
+                <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 dark:border-white/10 dark:bg-slate-950/60">
+                    <dt class="text-slate-500">Reading time</dt>
+                    <dd class="font-semibold text-slate-950 dark:text-white">{{ $post->readingTimeMinutes() }} min</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 dark:border-white/10 dark:bg-slate-950/60">
+                    <dt class="text-slate-500">Category</dt>
+                    <dd class="font-semibold text-slate-950 dark:text-white">{{ $post->category?->name }}</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 dark:border-white/10 dark:bg-slate-950/60">
+                    <dt class="text-slate-500">Published</dt>
+                    <dd class="font-semibold text-slate-950 dark:text-white">{{ $post->published_at?->format('M d, Y') }}</dd>
+                </div>
+            </dl>
+        </div>
+    </aside>
+</section>
 @else
 <section class="article-page__header">
     <div class="site-container">

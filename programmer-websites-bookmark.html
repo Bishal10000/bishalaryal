@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5 Websites Every Programmer Should Bookmark</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e2a;
+      --border: #232736;
+      --accent: #00e5ff;
+      --accent2: #7b61ff;
+      --green: #00ff88;
+      --text: #e2e8f0;
+      --muted: #6b7280;
+      --card-glow: 0 0 30px rgba(0, 229, 255, 0.06);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      padding: 80px 24px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(0,229,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.3);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      background: rgba(0,229,255,0.05);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius: 3px 0 0 3px;
+    }
+
+    .intro p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* ── WEBSITE CARDS ── */
+    .sites-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .site-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .site-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-glow);
+    }
+
+    .site-card:hover { border-color: rgba(0,229,255,0.25); }
+    .site-card:nth-child(2):hover { border-color: rgba(123,97,255,0.3); box-shadow: 0 0 30px rgba(123,97,255,0.07); }
+    .site-card:nth-child(3):hover { border-color: rgba(255,165,0,0.3); box-shadow: 0 0 30px rgba(255,165,0,0.07); }
+    .site-card:nth-child(4):hover { border-color: rgba(0,255,136,0.3); box-shadow: 0 0 30px rgba(0,255,136,0.07); }
+    .site-card:nth-child(5):hover { border-color: rgba(255,80,120,0.3); box-shadow: 0 0 30px rgba(255,80,120,0.07); }
+
+    /* number badge */
+    .card-num {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 52px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .icon-1 { background: rgba(0,229,255,0.12); }
+    .icon-2 { background: rgba(123,97,255,0.12); }
+    .icon-3 { background: rgba(255,165,0,0.12); }
+    .icon-4 { background: rgba(0,255,136,0.12); }
+    .icon-5 { background: rgba(255,80,120,0.12); }
+
+    .card-title-group h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .card-url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .card-url:hover { opacity: 1; }
+
+    .card-body {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      line-height: 1.75;
+    }
+
+    /* why bookmark pills */
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .why-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .site-card:nth-child(2) .why-dot { background: var(--accent2); }
+    .site-card:nth-child(3) .why-dot { background: #ffa500; }
+    .site-card:nth-child(4) .why-dot { background: var(--green); }
+    .site-card:nth-child(5) .why-dot { background: #ff5078; }
+
+    /* ── SUMMARY TABLE ── */
+    .summary {
+      margin-top: 56px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .summary-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .summary-header span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #28ca42; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    thead tr {
+      background: var(--surface2);
+    }
+
+    th {
+      padding: 14px 28px;
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    td {
+      padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      color: #cbd5e1;
+    }
+
+    td:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── FOOTER CTA ── */
+    .cta {
+      margin-top: 56px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.07), rgba(123,97,255,0.07));
+      border: 1px solid rgba(0,229,255,0.15);
+      border-radius: 20px;
+      padding: 40px 36px;
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .cta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .cta-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--surface);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header       { animation: fadeUp 0.6s ease both; }
+    .intro       { animation: fadeUp 0.6s 0.1s ease both; }
+    .site-card   { animation: fadeUp 0.5s ease both; }
+    .site-card:nth-child(1) { animation-delay: 0.15s; }
+    .site-card:nth-child(2) { animation-delay: 0.22s; }
+    .site-card:nth-child(3) { animation-delay: 0.29s; }
+    .site-card:nth-child(4) { animation-delay: 0.36s; }
+    .site-card:nth-child(5) { animation-delay: 0.43s; }
+    .summary     { animation: fadeUp 0.5s 0.5s ease both; }
+    .cta         { animation: fadeUp 0.5s 0.55s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header { padding: 60px 20px 40px; }
+      .site-card { padding: 24px 20px; }
+      .card-num { font-size: 36px; top: 20px; right: 20px; }
+      th, td { padding: 12px 16px; }
+      .cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="tag">// programmer resources</div>
+    <h1>5 Websites Every Programmer<br><span>Should Bookmark</span></h1>
+    <p class="subtitle">Stop googling the same tools every day. Add these to your browser and actually use them.</p>
+    <div class="meta">
+      <span>📅 2025</span>
+      <span>⏱ 4 min read</span>
+      <span>🏷 #resources #webdev</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- INTRO -->
+    <div class="intro">
+      <p>The internet has thousands of coding resources. Most of them are noise. These five have proven their worth — used daily by beginners and senior developers alike. Bookmark all of them. You'll thank yourself later.</p>
+    </div>
+
+    <!-- SITE CARDS -->
+    <div class="sites-list">
+
+      <!-- 1 -->
+      <div class="site-card">
+        <div class="card-num">01</div>
+        <div class="card-header">
+          <div class="card-icon icon-1">🗺️</div>
+          <div class="card-title-group">
+            <h2>roadmap.sh</h2>
+            <a class="card-url" href="https://roadmap.sh" target="_blank">roadmap.sh ↗</a>
+          </div>
+        </div>
+        <p class="card-body">
+          One of the biggest struggles for beginners — and even intermediate developers — is not knowing <em>what</em> to learn next. roadmap.sh solves that completely. It provides visual, step-by-step learning roadmaps for almost every tech path: Frontend, Backend, DevOps, Full Stack, React, Python, Cybersecurity, and more. Each roadmap breaks down exactly what to learn and in what order.
+        </p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-dot"></div>Clear direction for any tech career path</div>
+          <div class="why-item"><div class="why-dot"></div>Community-updated and always relevant</div>
+          <div class="why-item"><div class="why-dot"></div>Great for beginners and devs switching stacks</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="site-card">
+        <div class="card-num">02</div>
+        <div class="card-header">
+          <div class="card-icon icon-2">🔥</div>
+          <div class="card-title-group">
+            <h2>freeCodeCamp.org</h2>
+            <a class="card-url" href="https://freecodecamp.org" target="_blank">freecodecamp.org ↗</a>
+          </div>
+        </div>
+        <p class="card-body">
+          freeCodeCamp is one of the most trusted free learning platforms in the programming world — and for good reason. It offers hundreds of hours of structured, hands-on curriculum covering HTML, CSS, JavaScript, Python, Data Structures, Algorithms, and more. The project-based approach means you build real things, not just read theory. Plus their blog is packed with top-tier tutorials.
+        </p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-dot"></div>100% free — no paywalls, ever</div>
+          <div class="why-item"><div class="why-dot"></div>Certifications you can add to your portfolio</div>
+          <div class="why-item"><div class="why-dot"></div>Huge library of articles and video tutorials</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="site-card">
+        <div class="card-num">03</div>
+        <div class="card-header">
+          <div class="card-icon icon-3">🔍</div>
+          <div class="card-title-group">
+            <h2>regex101.com</h2>
+            <a class="card-url" href="https://regex101.com" target="_blank">regex101.com ↗</a>
+          </div>
+        </div>
+        <p class="card-body">
+          Let's be honest — regular expressions are confusing. Even experienced developers Google regex syntax constantly. That's where regex101.com comes in. It's a real-time regex tester and debugger that explains your pattern step by step as you type. Paste in your text, write your regex, and watch it highlight matches while the sidebar explains every single character of your expression.
+        </p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-dot"></div>Real-time matching with instant highlighting</div>
+          <div class="why-item"><div class="why-dot"></div>Supports JS, Python, PHP, Go and more</div>
+          <div class="why-item"><div class="why-dot"></div>Step-by-step breakdown — an absolute lifesaver</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="site-card">
+        <div class="card-num">04</div>
+        <div class="card-header">
+          <div class="card-icon icon-4">🐙</div>
+          <div class="card-title-group">
+            <h2>GitHub.com</h2>
+            <a class="card-url" href="https://github.com" target="_blank">github.com ↗</a>
+          </div>
+        </div>
+        <p class="card-body">
+          If you're a programmer and not actively using GitHub, you're missing the most important platform in the entire dev ecosystem. GitHub is where the world's code lives — open-source projects, personal portfolios, collaborative teams, everything. Beyond storing code, it's where you build your developer reputation, contribute to open source, and showcase work to employers.
+        </p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-dot"></div>Your developer portfolio and identity lives here</div>
+          <div class="why-item"><div class="why-dot"></div>Explore and contribute to millions of open-source projects</div>
+          <div class="why-item"><div class="why-dot"></div>Version control, CI/CD, and project management in one</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="site-card">
+        <div class="card-num">05</div>
+        <div class="card-header">
+          <div class="card-icon icon-5">✏️</div>
+          <div class="card-title-group">
+            <h2>CodePen.io</h2>
+            <a class="card-url" href="https://codepen.io" target="_blank">codepen.io ↗</a>
+          </div>
+        </div>
+        <p class="card-body">
+          CodePen is a browser-based code playground for HTML, CSS, and JavaScript. It's the perfect place to test a quick idea, experiment with animations, or share a snippet without any setup. The community aspect makes it even better — browse thousands of "pens" built by other developers, fork them, learn how they work, and remix them for your own projects.
+        </p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-dot"></div>Instant HTML/CSS/JS sandbox — zero setup</div>
+          <div class="why-item"><div class="why-dot"></div>Huge community of creative front-end experiments</div>
+          <div class="why-item"><div class="why-dot"></div>Best place to learn UI tricks and animations</div>
+        </div>
+      </div>
+
+    </div><!-- /sites-list -->
+
+    <!-- SUMMARY TABLE -->
+    <div class="summary">
+      <div class="summary-header">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="margin-left:8px;">quick_reference.txt</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Website</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>roadmap.sh</td><td>Knowing exactly what to learn next</td></tr>
+          <tr><td>02</td><td>freecodecamp.org</td><td>Free structured learning & certifications</td></tr>
+          <tr><td>03</td><td>regex101.com</td><td>Debugging regular expressions</td></tr>
+          <tr><td>04</td><td>github.com</td><td>Code hosting, portfolio & open source</td></tr>
+          <tr><td>05</td><td>codepen.io</td><td>Front-end experiments & inspiration</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FOOTER CTA -->
+    <div class="cta">
+      <h3>💾 Save this post</h3>
+      <p>Share it with a programmer friend who could use a better toolkit. Drop your own favorites in the comments — let's build the ultimate list.</p>
+      <div class="cta-tags">
+        <span class="cta-tag">#WebDev</span>
+        <span class="cta-tag">#Programming</span>
+        <span class="cta-tag">#Resources</span>
+        <span class="cta-tag">#LearnToCode</span>
+        <span class="cta-tag">#Developer</span>
+        <span class="cta-tag">#100DaysOfCode</span>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

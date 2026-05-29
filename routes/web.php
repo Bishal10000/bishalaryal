@@ -37,6 +37,7 @@ Route::get('/article-vscode-extensions.html', fn () => $staticPage('article-vsco
 Route::get('/about.html', fn () => $staticPage('about.html'))->name('about');
 Route::get('/newsletter.html', fn () => $staticPage('newsletter.html'))->name('newsletter');
 Route::get('/vscode-extensions-carousel.html', fn () => $staticPage('vscode-extensions-carousel.html'))->name('articles.vscode-extensions.carousel');
+Route::get('/programmer-websites-bookmark.html', fn () => $staticPage('programmer-websites-bookmark.html'))->name('articles.programmer-websites-bookmark');
 
 // Note: Blog listing removed; posts remain available at /posts/{slug}.
 Route::get('/posts/{post:slug}', function (Post $post) {
@@ -49,6 +50,7 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 
     $post = $post->loadMissing(['author', 'category', 'tags', 'comments']);
     $isVscodePost = $post->slug === 'VS Code Extensions that make coding easier';
+    $isProgrammerWebsitesPost = $post->slug === '5-websites-every-programmer-should-bookmark';
     $shouldRenderBody = trim(strip_tags($post->body ?? '')) !== 'PLACEHOLDER';
     $bodyHtml = $shouldRenderBody ? $post->body : null;
 
@@ -70,6 +72,7 @@ Route::get('/posts/{post:slug}', function (Post $post) {
         'nextPost' => $currentIndex !== false ? $publishedPosts->get($currentIndex + 1) : null,
         'relatedPosts' => $publishedPosts->where('id', '!=', $post->id)->take(3),
         'isVscodePost' => $isVscodePost,
+        'isProgrammerWebsitesPost' => $isProgrammerWebsitesPost,
         'shouldRenderBody' => $shouldRenderBody,
         'bodyHtml' => $bodyHtml,
         'toc' => $toc,
