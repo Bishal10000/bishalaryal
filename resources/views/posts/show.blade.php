@@ -18,6 +18,10 @@
 
         <h1 class="article-page__title fade-up">{{ $post->title }}</h1>
         <p class="lead fade-up">{{ $post->excerpt }}</p>
+
+        @if($post->thumbnail)
+            <img class="article-page__hero fade-up" src="{{ $post->thumbnailUrl() }}" alt="{{ $post->title }}">
+        @endif
     </div>
 </section>
 
@@ -65,6 +69,10 @@
 
         <h1 class="article-page__title fade-up">{{ $post->title }}</h1>
         <p class="lead fade-up">{{ $post->excerpt }}</p>
+
+        @if($post->thumbnail)
+            <img class="article-page__hero fade-up" src="{{ $post->thumbnailUrl() }}" alt="{{ $post->title }}">
+        @endif
     </div>
 </section>
 
