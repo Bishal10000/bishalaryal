@@ -6,7 +6,7 @@
 @section('content')
 @php
     $topics = $categories->take(6);
-    $authorAvatar = asset('images/bishal.jpg');
+    $authorAvatar = 'https://picsum.photos/seed/bishal-home-avatar/160/160';
     $authorName = $author?->name ?? 'Bishal Aryal';
     $authorRole = $author?->role ?? 'Editor and storyteller';
     $authorBio = $author?->bio ?? 'Crafting editorial-grade Laravel experiences with premium UI, sharp writing, and thoughtful motion.';

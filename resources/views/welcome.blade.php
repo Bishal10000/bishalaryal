@@ -27,7 +27,7 @@
                 'UI/UX Design Basics',
             ];
 
-            $profilePhotoPath = 'images/bishal.jpg';
+            $profilePhotoPath = 'https://picsum.photos/seed/bishal-welcome-avatar/320/320';
             $profilePhotoExists = file_exists(public_path($profilePhotoPath));
 
             $socialLinks = [
@@ -161,7 +161,7 @@
                                 />
                             @else
                                 <div class="flex h-full w-full items-center justify-center px-8 text-center text-slate-600">
-                                    Add your photo at public/images/bishal.jpg
+                                    Add your photo or swap this placeholder URL to your preferred image.
                                 </div>
                             @endif
                         </div>

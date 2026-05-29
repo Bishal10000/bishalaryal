@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             'bio' => fake()->sentence(18),
-            'avatar_url' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=640&q=80',
+            'avatar_url' => 'https://picsum.photos/seed/bishal-factory-avatar/640/640',
             'role' => 'Editor-in-Chief',
             'github_url' => 'https://github.com/Bishal10000',
             'linkedin_url' => 'https://www.linkedin.com/in/bishal-aryal-829286310/',

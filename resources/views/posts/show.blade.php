@@ -111,7 +111,7 @@
         <h1 class="article-page__title fade-up">{{ $post->title }}</h1>
 
         <div class="article-page__author fade-up">
-            <img class="article-page__author-avatar" src="{{ $post->author?->avatar_url ?? asset('images/bishal.jpg') }}" alt="{{ $post->author?->name }}">
+            <img class="article-page__author-avatar" src="{{ $post->author?->avatar_url ?? 'https://picsum.photos/seed/bishal-author-avatar/160/160' }}" alt="{{ $post->author?->name }}">
             <div>
                 <div class="article-card__meta"><span>Written by {{ $post->author?->name }}</span></div>
             </div>
@@ -141,7 +141,7 @@
 
         <div class="article-page__author-box card-surface fade-up">
             <div class="author-bio">
-                <img class="author-bio__avatar" src="{{ $post->author?->avatar_url ?? asset('images/bishal.jpg') }}" alt="{{ $post->author?->name }}">
+                <img class="author-bio__avatar" src="{{ $post->author?->avatar_url ?? 'https://picsum.photos/seed/bishal-author-bio/160/160' }}" alt="{{ $post->author?->name }}">
                 <div>
                     <h2 class="article-card__title">{{ $post->author?->name }}</h2>
                     <p class="author-bio__text">{{ $post->author?->bio ?? 'Author bio not available.' }}</p>

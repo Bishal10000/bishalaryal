@@ -24,7 +24,7 @@
 
         <div class="mt-6 flex items-center justify-between border-t border-slate-200/80 pt-4 dark:border-white/10">
             <div class="flex items-center gap-3">
-                <img src="{{ asset('images/bishal.jpg') }}" alt="{{ $post->author?->name ?? 'Author' }}" class="h-10 w-10 rounded-full object-cover">
+                <img src="{{ $post->author?->avatar_url ?? 'https://picsum.photos/seed/bishal-post-card-avatar/160/160' }}" alt="{{ $post->author?->name ?? 'Author' }}" class="h-10 w-10 rounded-full object-cover">
                 <div>
                     <p class="text-sm font-semibold text-slate-950 dark:text-white">{{ $post->author?->name ?? 'Bishal Aryal' }}</p>
                     <p class="text-xs text-slate-500">{{ $post->author?->role ?? 'Editor' }}</p>
