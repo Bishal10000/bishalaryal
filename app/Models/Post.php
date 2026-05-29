@@ -59,7 +59,7 @@ class Post extends Model
         $thumbnail = $this->thumbnail;
 
         if (!$thumbnail) {
-            return 'https://images.unsplash.com/photo-1470214304380-aadaedcfff80?auto=format&fit=crop&w=1200&q=80';
+            return 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80';
         }
 
         if (str_starts_with($thumbnail, 'http://') || str_starts_with($thumbnail, 'https://')) {
