@@ -13,7 +13,10 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:image" content="@yield('og_image', 'https://picsum.photos/seed/bishal-og-default/1200/630')">
+        <meta property="og:image:secure_url" content="@yield('og_image', 'https://picsum.photos/seed/bishal-og-default/1200/630')">
         <meta property="og:image:alt" content="@yield('og_image_alt', config('app.name'))">
+        <meta property="og:image:width" content="@yield('og_image_width', '1200')">
+        <meta property="og:image:height" content="@yield('og_image_height', '630')">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="@yield('og_image', 'https://picsum.photos/seed/bishal-og-default/1200/630')">
         <link rel="alternate" type="application/rss+xml" title="{{ config('app.name') }} RSS" href="{{ route('blog.feed') }}">
