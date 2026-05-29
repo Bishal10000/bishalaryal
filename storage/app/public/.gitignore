@@ -1,2 +1,4 @@
 *
 !.gitignore
+!post-thumbnails/
+!post-thumbnails/**
