@@ -12,7 +12,10 @@
         <meta property="og:description" content="@yield('og_description', trim($__env->yieldContent('meta_description', 'A premium editorial blog built with Laravel, Blade, and motion-first design.')))">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:image" content="@yield('og_image', 'https://picsum.photos/seed/bishal-og-default/1200/630')">
+        <meta property="og:image:alt" content="@yield('og_image_alt', config('app.name'))">
         <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="@yield('og_image', 'https://picsum.photos/seed/bishal-og-default/1200/630')">
         <link rel="alternate" type="application/rss+xml" title="{{ config('app.name') }} RSS" href="{{ route('blog.feed') }}">
 
         @stack('meta')

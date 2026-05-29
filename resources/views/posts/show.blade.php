@@ -1,6 +1,9 @@
 @extends('layouts.blog')
 
 @section('title', $post->title)
+@section('meta_description', $post->excerpt)
+@section('og_image', $post->thumbnailUrl())
+@section('og_image_alt', $post->title)
 @section('content')
 
 @if ($isVscodePost)
