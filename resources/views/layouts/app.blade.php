@@ -1,44 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="dark" data-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="theme-color" content="#0a0a0a">
 
-        <title>@yield('title') - Bishal Aryal</title>
+        <title>@yield('title', config('app.name')) - Bishal Aryal</title>
+        <meta name="description" content="@yield('meta_description', 'A premium editorial blog built with Laravel, Blade, and motion-first design.')">
+        <meta property="og:title" content="@yield('og_title', trim($__env->yieldContent('title', config('app.name'))))">
+        <meta property="og:description" content="@yield('og_description', trim($__env->yieldContent('meta_description', 'A premium editorial blog built with Laravel, Blade, and motion-first design.')))">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="alternate" type="application/rss+xml" title="{{ config('app.name') }} RSS" href="{{ route('blog.feed') }}">
 
+        @stack('meta')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="min-h-screen text-slate-900 antialiased">
-        <div class="fixed inset-0 -z-10 overflow-hidden bg-[#f8fafc]">
-            <div class="absolute -left-24 top-24 h-72 w-72 rounded-full bg-teal-100/70 blur-3xl"></div>
-            <div class="absolute right-8 top-20 h-64 w-64 rounded-full bg-sky-100/70 blur-3xl"></div>
+    <body class="overflow-x-hidden antialiased">
+        <div data-reading-progress class="reading-progress"></div>
+        <div data-custom-cursor-ring class="cursor-ring hidden lg:block"></div>
+        <div data-custom-cursor class="cursor-dot hidden lg:block"></div>
+
+        <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+            <div data-parallax data-speed="0.05" class="hero-orb left-[-8rem] top-24 h-72 w-72 bg-[#c8622a]/18"></div>
+            <div data-parallax data-speed="0.09" class="hero-orb right-[-4rem] top-36 h-96 w-96 bg-[#f5f0e8]/8"></div>
+            <div class="absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top,rgba(200,98,42,0.12),transparent_55%)]"></div>
         </div>
 
-        <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-6 lg:px-10">
-            <header class="flex items-center justify-between gap-6 border-b border-slate-200/80 py-5">
-                <div>
-                    <a href="/" class="font-display text-3xl font-bold tracking-tight text-slate-900 hover:text-teal-700 transition">Bishal Aryal</a>
-                    <p class="text-sm text-slate-500">Web Developer</p>
-                </div>
+        @include('partials.navigation')
 
-                <nav class="hidden items-center gap-2 text-sm text-slate-600 md:flex">
-                    <a href="/" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">Home</a>
-                    <a href="/about" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">About</a>
-                    <a href="/projects" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">Projects</a>
-                    <a href="/skills" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">Skills</a>
-                    <a href="/process" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">Process</a>
-                    <a href="/contact" class="rounded-full px-4 py-2 font-semibold transition hover:bg-slate-100 hover:text-slate-900">Contact</a>
-                </nav>
-            </header>
-
+        <main class="relative z-10 mx-auto min-h-screen w-full max-w-[1600px] px-4 pb-16 pt-4 sm:px-6 lg:px-8">
             @yield('content')
-
-            <footer class="border-t border-slate-200 py-6 text-sm text-slate-600 mt-auto">
-                <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                    <p>Bishal Aryal. Web Developer & Database Architect.</p>
-                    <p>Built with Laravel, Blade, and Tailwind CSS.</p>
-                </div>
-            </footer>
         </main>
+
+        @include('partials.footer')
+
+        @stack('scripts')
     </body>
 </html>

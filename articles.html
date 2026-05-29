@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Bishal Aryal | Blogs</title>
+    <meta name="description" content="Browse all blogs by Bishal Aryal across technology, design, travel, philosophy, code, life, and culture.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/articles.css">
+</head>
+<body class="articles-page">
+    <div class="top-border"></div>
+    <div class="reading-progress"><div class="reading-progress__bar"></div></div>
+    <div class="custom-cursor-ring"></div>
+    <div class="custom-cursor"></div>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="index.html" aria-label="Bishal Aryal home">
+                <span class="site-brand__mark" aria-hidden="true"></span>
+                <span>Bishal Aryal</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <div class="site-nav__links">
+                    <div class="site-nav__item"><a class="site-nav__link" href="index.html">Home</a></div>
+                    <div class="site-nav__item">
+                        <a class="site-nav__link is-active" href="articles.html">Blog</a>
+                        <div class="site-nav__dropdown" aria-label="Featured blog titles">
+                            <p class="site-nav__dropdown-label">Blog Titles</p>
+                            <div class="site-nav__dropdown-list">
+                                <a class="site-nav__dropdown-link" href="vscode-extensions-carousel.html">VS Code Extensions Carousel<small>Extension picks for devs</small></a>
+                                <a class="site-nav__dropdown-link" href="article-single.html">The Quiet Revolution Happening Inside Every AI Model<small>AI and the invisible redesign of thinking</small></a>
+                                <a class="site-nav__dropdown-link" href="article-single.html">Why ICT Infrastructure Matters More Than Apps<small>How systems shape everyday progress</small></a>
+                                <a class="site-nav__dropdown-link" href="article-single.html">What Coding Taught Me About Writing<small>Structure, clarity, and creative discipline</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="site-nav__item"><a class="site-nav__link" href="about.html">About</a></div>
+                    <div class="site-nav__item"><a class="site-nav__link" href="newsletter.html">Newsletter</a></div>
+                </div>
+                <button class="site-nav__toggle" type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Open menu">
+                    <span class="site-nav__toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="site-nav__overlay" data-mobile-menu-overlay>
+        <div class="site-nav__panel">
+            <div class="flex-between" style="margin-bottom: 1.25rem;">
+                <span class="site-brand"><span class="site-brand__mark" aria-hidden="true"></span><span>Bishal Aryal</span></span>
+                <button class="btn btn-ghost" type="button" data-mobile-menu-close>Close</button>
+            </div>
+            <nav class="site-nav__mobile-links" aria-label="Mobile navigation">
+                <a class="site-nav__mobile-link" href="index.html">Home <span>Start</span></a>
+                <a class="site-nav__mobile-link" href="articles.html">Blog <span>Read</span></a>
+                
+                <a class="site-nav__mobile-link" href="about.html">About <span>Story</span></a>
+                <a class="site-nav__mobile-link" href="newsletter.html">Newsletter <span>Weekly</span></a>
+                <div class="site-nav__mobile-titles">
+                    <div class="site-nav__mobile-titles-label">Blog Titles</div>
+                    <a class="site-nav__mobile-title" href="article-single.html">The Quiet Revolution Happening Inside Every AI Model</a>
+                    <a class="site-nav__mobile-title" href="article-single.html">Why ICT Infrastructure Matters More Than Apps</a>
+                    <a class="site-nav__mobile-title" href="article-single.html">What Coding Taught Me About Writing</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section class="articles-page__header">
+            <div class="site-container">
+                <div class="section-label fade-up">BISHAL ARYAL</div>
+                <h1 class="articles-page__title fade-up">All Blogs</h1>
+                <p class="articles-page__breadcrumb fade-up">Home / Blogs</p>
+            </div>
+        </section>
+
+        <section class="articles-filter" data-filter-bar>
+            <div class="articles-filter__inner">
+                <div class="articles-filter__left">
+                    <div class="articles-filter__pills" aria-label="Filter blogs by category">
+                        <button class="articles-filter__pill is-active" type="button" data-filter-pill="all">All</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="technology">Technology</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="design">Design</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="travel">Travel</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="philosophy">Philosophy</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="code">Code</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="life">Life</button>
+                        <button class="articles-filter__pill" type="button" data-filter-pill="culture">Culture</button>
+                    </div>
+                </div>
+                <div class="articles-filter__search">
+                    <label class="screen-reader-only" for="article-search">Search blogs</label>
+                    <input id="article-search" type="text" data-article-search placeholder="Search titles and topics...">
+                </div>
+                <div class="articles-filter__sort">
+                    <label class="screen-reader-only" for="article-sort">Sort blogs</label>
+                    <select id="article-sort" data-article-sort>
+                        <option value="latest">Latest</option>
+                        <option value="most-viewed">Most viewed</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles-grid">
+            <div class="site-container">
+                <div class="articles-grid__list">
+                    <a class="article-card fade-up" data-article-card data-category="code" data-date="2026-05-29" data-views="1500" data-search="VS Code Extensions Carousel Code tools extensions Error Lens Prettier GitLens" href="article-vscode-extensions.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/vscode-extensions/800/500" alt="VS Code extensions collage">
+                        <div class="article-card__body">
+                            <span class="badge">Code</span>
+                            <h2 class="article-card__title">VS Code Extensions Carousel</h2>
+                            <p class="article-card__excerpt">A visual carousel with curated VS Code extension picks for faster, cleaner development.</p>
+                            <div class="article-card__meta"><span>May 29, 2026</span><span class="meta-dot"></span><span>— visual</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="technology" data-date="2025-05-18" data-views="1240" data-search="The Quiet Revolution Happening Inside Every AI Model Technology AI context hidden mechanics" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/quiet-revolution/800/500" alt="AI themed illustration">
+                        <div class="article-card__body">
+                            <span class="badge">Technology</span>
+                            <h2 class="article-card__title">The Quiet Revolution Happening Inside Every AI Model</h2>
+                            <p class="article-card__excerpt">A closer look at the internal changes that shape how models remember, adapt, and reason with context.</p>
+                            <div class="article-card__meta"><span>May 18, 2025</span><span class="meta-dot"></span><span>6 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="design" data-date="2025-05-12" data-views="980" data-search="Why Good Design Is Actually a Form of Respect Design respect friction" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/good-design-respect/800/500" alt="Minimal design composition">
+                        <div class="article-card__body">
+                            <span class="badge">Design</span>
+                            <h2 class="article-card__title">Why Good Design Is Actually a Form of Respect</h2>
+                            <p class="article-card__excerpt">When systems are considerate, they make the user feel capable instead of blamed.</p>
+                            <div class="article-card__meta"><span>May 12, 2025</span><span class="meta-dot"></span><span>4 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="culture" data-date="2025-05-08" data-views="430" data-search="Nepal at the Crossroads of the Digital Age Culture Nepal future" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/nepal-digital-age/800/500" alt="Mountain landscape and city lights">
+                        <div class="article-card__body">
+                            <span class="badge">Culture</span>
+                            <h2 class="article-card__title">Nepal at the Crossroads of the Digital Age</h2>
+                            <p class="article-card__excerpt">What changes when a place with deep memory meets tools built for speed and scale?</p>
+                            <div class="article-card__meta"><span>May 08, 2025</span><span class="meta-dot"></span><span>7 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="philosophy" data-date="2025-05-01" data-views="510" data-search="The Art of Thinking Slowly in a Fast World Philosophy slow thought" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/thinking-slowly/800/500" alt="Quiet desk with books and journal">
+                        <div class="article-card__body">
+                            <span class="badge">Philosophy</span>
+                            <h2 class="article-card__title">The Art of Thinking Slowly in a Fast World</h2>
+                            <p class="article-card__excerpt">A case for allowing ideas to mature before handing them to the audience.</p>
+                            <div class="article-card__meta"><span>May 01, 2025</span><span class="meta-dot"></span><span>5 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="code" data-date="2025-04-26" data-views="760" data-search="Building in Public What I Learned Shipping Alone Code shipping solo" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/building-public/800/500" alt="Laptop and notes on a desk">
+                        <div class="article-card__body">
+                            <span class="badge">Code</span>
+                            <h2 class="article-card__title">Building in Public: What I Learned Shipping Alone</h2>
+                            <p class="article-card__excerpt">The lessons are less glamorous than the tweets suggest and more useful in practice.</p>
+                            <div class="article-card__meta"><span>April 26, 2025</span><span class="meta-dot"></span><span>8 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up" data-article-card data-category="travel" data-date="2025-04-19" data-views="410" data-search="Airports Algorithms and the Feeling of Nowhere Travel transit airports" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/airport-algorithms/800/500" alt="Airport terminal at dusk">
+                        <div class="article-card__body">
+                            <span class="badge">Travel</span>
+                            <h2 class="article-card__title">Airports, Algorithms, and the Feeling of Nowhere</h2>
+                            <p class="article-card__excerpt">Transit spaces reveal how technology can make movement efficient and oddly impersonal at once.</p>
+                            <div class="article-card__meta"><span>April 19, 2025</span><span class="meta-dot"></span><span>3 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="design" data-date="2025-04-12" data-views="300" data-search="The Designer's Obsession With Negative Space Design spacing composition" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/negative-space/800/500" alt="Abstract negative space composition">
+                        <div class="article-card__body">
+                            <span class="badge">Design</span>
+                            <h2 class="article-card__title">The Designer's Obsession With Negative Space</h2>
+                            <p class="article-card__excerpt">The best layouts know when to stop speaking and let the page breathe.</p>
+                            <div class="article-card__meta"><span>April 12, 2025</span><span class="meta-dot"></span><span>5 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="code" data-date="2025-04-05" data-views="680" data-search="What Coding Taught Me About Writing Code writing clarity" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/coding-writing/800/500" alt="Open notebook next to laptop">
+                        <div class="article-card__body">
+                            <span class="badge">Code</span>
+                            <h2 class="article-card__title">What Coding Taught Me About Writing</h2>
+                            <p class="article-card__excerpt">Good prose, like good software, depends on structure, naming, and the courage to simplify.</p>
+                            <div class="article-card__meta"><span>April 05, 2025</span><span class="meta-dot"></span><span>6 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="philosophy" data-date="2025-03-29" data-views="250" data-search="On Living Deliberately in a Distracted World Philosophy attention deliberate" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/living-deliberately/800/500" alt="Quiet window light over a desk">
+                        <div class="article-card__body">
+                            <span class="badge">Philosophy</span>
+                            <h2 class="article-card__title">On Living Deliberately in a Distracted World</h2>
+                            <p class="article-card__excerpt">Deliberation is not slowness for its own sake. It is choosing where your attention deserves to go.</p>
+                            <div class="article-card__meta"><span>March 29, 2025</span><span class="meta-dot"></span><span>4 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="technology" data-date="2025-03-22" data-views="190" data-search="The Future of Work Is Already Here, Just Unevenly Distributed Technology future of work" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/future-work/800/500" alt="Modern workspace with monitors">
+                        <div class="article-card__body">
+                            <span class="badge">Technology</span>
+                            <h2 class="article-card__title">The Future of Work Is Already Here, Just Unevenly Distributed</h2>
+                            <p class="article-card__excerpt">The tools exist; what remains uneven is access, confidence, and the willingness to redesign work.</p>
+                            <div class="article-card__meta"><span>March 22, 2025</span><span class="meta-dot"></span><span>7 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="technology" data-date="2025-03-18" data-views="220" data-search="Why ICT Infrastructure Matters More Than Apps Technology ICT infrastructure" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/ict-infrastructure/800/500" alt="City infrastructure with data network overlay">
+                        <div class="article-card__body">
+                            <span class="badge">Technology</span>
+                            <h2 class="article-card__title">Why ICT Infrastructure Matters More Than Apps</h2>
+                            <p class="article-card__excerpt">The quiet backbone of digital progress is usually more important than the apps that get the headlines.</p>
+                            <div class="article-card__meta"><span>March 18, 2025</span><span class="meta-dot"></span><span>6 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="life" data-date="2025-03-15" data-views="160" data-search="Monsoon Season and the Rhythm of Slow Days Life monsoon reflection" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/monsoon-slow-days/800/500" alt="Rain on a window with soft light">
+                        <div class="article-card__body">
+                            <span class="badge">Life</span>
+                            <h2 class="article-card__title">Monsoon Season and the Rhythm of Slow Days</h2>
+                            <p class="article-card__excerpt">Some seasons are built for motion. Others invite you to stay where you are and pay attention.</p>
+                            <div class="article-card__meta"><span>March 15, 2025</span><span class="meta-dot"></span><span>3 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="technology" data-date="2025-03-10" data-views="350" data-search="How AI Changes the Shape of Everyday Work Technology AI work" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/ai-everyday-work/800/500" alt="AI interface over a desk workspace">
+                        <div class="article-card__body">
+                            <span class="badge">Technology</span>
+                            <h2 class="article-card__title">How AI Changes the Shape of Everyday Work</h2>
+                            <p class="article-card__excerpt">AI doesn’t just automate tasks. It quietly changes the pace, expectations, and texture of the workday.</p>
+                            <div class="article-card__meta"><span>March 10, 2025</span><span class="meta-dot"></span><span>5 min read</span></div>
+                        </div>
+                    </a>
+                    <a class="article-card fade-up is-load-hidden" data-article-card data-category="technology" data-date="2025-03-08" data-views="140" data-search="A Beginner's Guide to Thinking in Systems Technology systems thinking" href="article-single.html">
+                        <img class="article-card__image" src="https://picsum.photos/seed/thinking-systems/800/500" alt="System diagram and sticky notes">
+                        <div class="article-card__body">
+                            <span class="badge">Technology</span>
+                            <h2 class="article-card__title">A Beginner's Guide to Thinking in Systems</h2>
+                            <p class="article-card__excerpt">Useful systems thinking begins with noticing relationships before reaching for solutions.</p>
+                            <div class="article-card__meta"><span>March 08, 2025</span><span class="meta-dot"></span><span>9 min read</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="articles-grid__empty card-surface" data-articles-empty>
+                    <div class="article-card__body" style="padding: 2rem; text-align: center;">
+                        <h2 class="article-card__title">No articles match that filter yet.</h2>
+                        <p class="article-card__excerpt">Try a different category or clear the search input to bring the full archive back.</p>
+                    </div>
+                </div>
+                <div class="articles-grid__load-more">
+                    <button class="btn btn-outline" type="button" data-load-more-button>Load More Articles</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__columns">
+                <div class="site-footer__brand">
+                    <div class="site-footer__logo"><span class="site-brand__mark" aria-hidden="true"></span><span>Bishal Aryal</span></div>
+                    <p class="site-footer__tagline">Writing at the intersection of technology and thought</p>
+                </div>
+                <div>
+                    <div class="site-footer__title">Quick Links</div>
+                    <div class="site-footer__links">
+                        <a class="site-footer__link" href="index.html">Home</a>
+                        <a class="site-footer__link" href="articles.html">Blog</a>
+                        
+                        <a class="site-footer__link" href="about.html">About</a>
+                        <a class="site-footer__link" href="newsletter.html">Newsletter</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="site-footer__title">Social</div>
+                    <div class="site-footer__socials">
+                        <a class="social-link" href="https://x.com/" target="_blank" rel="noreferrer" aria-label="Twitter or X">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.15l-4.82-6.33L6.7 22H3.6l7.25-8.29L1.8 2h6.3l4.32 5.68L18.9 2Zm-1.08 18h1.72L7.17 3.82H5.33L17.82 20Z"></path></svg>
+                        </a>
+                        <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A1.94 1.94 0 1 1 3 6.5a1.94 1.94 0 0 1 3.94 0ZM3.35 8.97h3.16V21H3.35V8.97Zm5.16 0h3.02v1.64h.04c.42-.8 1.45-1.64 2.99-1.64 3.2 0 3.79 2.1 3.79 4.84V21h-3.16v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21H8.51V8.97Z"></path></svg>
+                        </a>
+                        <a class="social-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.37 22.9c.58.1.79-.24.79-.53v-1.82c-3.21.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.72-1.55-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.18a10.97 10.97 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.6.23 2.78.11 3.07.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.41-5.27 5.7.41.35.79 1.03.79 2.08v3.08c0 .29.2.64.8.53A11.5 11.5 0 0 0 12 .5Z"></path></svg>
+                        </a>
+                        <a class="social-link" href="/feed.xml" aria-label="RSS feed">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 18.5A1.5 1.5 0 1 1 4 17a1.5 1.5 0 0 1 1.5 1.5ZM4 4.8v3.06C10.74 7.86 16.14 13.26 16.14 20H19.2C19.2 11.58 12.42 4.8 4 4.8Zm0 6.34v3.06c3.97 0 7.2 3.23 7.2 7.2h3.06c0-5.66-4.6-10.26-10.26-10.26Z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <span>© 2025 Bishal Aryal</span>
+                <span>All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

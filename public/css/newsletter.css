@@ -1,0 +1,104 @@
+.newsletter-page__hero {
+    padding: 7.5rem 0 4rem;
+    text-align: center;
+}
+
+.newsletter-page__title {
+    font-size: clamp(3.4rem, 8vw, 6.4rem);
+    margin: 0 auto;
+    max-width: 12ch;
+}
+
+.newsletter-page__subtext {
+    margin: 1.25rem auto 0;
+    max-width: 42rem;
+    color: rgba(245, 240, 232, 0.78);
+    font-size: 1.1rem;
+}
+
+.newsletter-page__form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.85rem;
+    margin: 2rem auto 0;
+    width: min(100%, 42rem);
+}
+
+.newsletter-page__success {
+    margin-top: 1rem;
+    color: #f0c39e;
+}
+
+.newsletter-benefits__cards,
+.newsletter-issues__cards,
+.newsletter-testimonials__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.newsletter-benefit,
+.issue-card,
+.testimonial-card {
+    padding: 1.5rem;
+}
+
+.newsletter-benefit__title,
+.issue-card__title {
+    margin: 0.9rem 0 0.55rem;
+    font-size: 1.55rem;
+}
+
+.newsletter-benefit__text,
+.issue-card__meta,
+.testimonial-card__text {
+    color: rgba(245, 240, 232, 0.76);
+}
+
+.newsletter-benefit__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background: rgba(200, 98, 42, 0.12);
+    border: 1px solid rgba(200, 98, 42, 0.28);
+    color: #f3c2a0;
+}
+
+.testimonial-card__quote {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: var(--text-primary);
+}
+
+.testimonial-card__author {
+    margin-top: 1rem;
+    color: #f0c39e;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1100px) {
+    .newsletter-benefits__cards,
+    .newsletter-issues__cards,
+    .newsletter-testimonials__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-page__hero {
+        padding-top: 6.8rem;
+    }
+
+    .newsletter-page__form,
+    .newsletter-benefits__cards,
+    .newsletter-issues__cards,
+    .newsletter-testimonials__cards {
+        grid-template-columns: 1fr;
+    }
+}
