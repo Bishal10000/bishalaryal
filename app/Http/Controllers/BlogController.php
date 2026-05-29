@@ -130,7 +130,7 @@ class BlogController extends Controller
                 'title' => $post->title,
                 'slug' => $post->slug,
                 'excerpt' => $post->teaser(),
-                'thumbnail' => $post->thumbnail,
+                'thumbnail' => $post->thumbnailUrl(),
                 'category' => $post->category?->name,
                 'reading_time' => $post->readingTimeMinutes(),
                 'url' => route('posts.show', $post),

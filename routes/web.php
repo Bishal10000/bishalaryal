@@ -148,12 +148,3 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/link-storage', function () {
-    try {
-        \Illuminate\Support\Facades\Artisan::call('storage:link');
-        return 'Storage link created successfully!';
-    } catch (\Exception $e) {
-        return 'Error or already linked: ' . $e->getMessage();
-    }
-});
-

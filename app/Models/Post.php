@@ -5,11 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
 
 #[Fillable(['title', 'slug', 'body', 'excerpt', 'thumbnail', 'user_id', 'category_id', 'published_at'])]
 class Post extends Model
 {
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($post) {
+            if (!empty($post->thumbnail) && !str_starts_with($post->thumbnail, 'http')) {
+                $localPath = storage_path('app/public/' . $post->thumbnail);
+                if (file_exists($localPath)) {
+                    try {
+                        $service = app(\App\Services\CloudinaryService::class);
+                        $url = $service->upload($localPath);
+                        \DB::table('posts')->where('id', $post->id)->update(['thumbnail' => $url]);
+                        unlink($localPath);
+                    } catch (\Exception $e) {
+                        \Log::error('Cloudinary upload failed: ' . $e->getMessage());
+                    }
+                }
+            }
+        });
+    }
+
     protected function casts(): array
     {
         return [
@@ -56,17 +76,11 @@ class Post extends Model
 
     public function thumbnailUrl(): string
     {
-        $thumbnail = $this->thumbnail;
-
-        if (!$thumbnail) {
-            return 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80';
+        if (!empty($this->thumbnail) && str_starts_with($this->thumbnail, 'http')) {
+            return $this->thumbnail;
         }
 
-        if (str_starts_with($thumbnail, 'http://') || str_starts_with($thumbnail, 'https://')) {
-            return $thumbnail;
-        }
-
-        return Storage::disk('public')->url($thumbnail);
+        return 'https://placehold.co/800x500/111111/c8622a?text=Bishal+Aryal';
     }
 
     public function getRouteKeyName(): string
