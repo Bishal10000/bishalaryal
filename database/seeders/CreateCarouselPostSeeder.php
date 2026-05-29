@@ -22,7 +22,7 @@ HTML;
                 'title' => 'VS Code Extensions Carousel — Programming Pro',
                 'excerpt' => 'A visual carousel showcasing 5 VS Code extensions that make coding easier.',
                 'body' => $html,
-                'thumbnail' => '/images/vscode-extensions-thumbnail.svg',
+                'thumbnail' => '/images/vscode-extensions-thumbnail.png',
                 'user_id' => 1,
                 'category_id' => 1,
                 'published_at' => now(),
